@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Command - Pip-Boy Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="contenedor-juego">
+        <div id="menu-principal" class="overlay">
+            <h1>COMANDO ATÓMICO</h1>
+            <p>[ SISTEMA DE DEFENSA ACTIVO ]</p>
+            <input type="text" id="input-nametag" placeholder="Ingresa tu Nametag (Opcional)" maxlength="10">
+            <button onclick="iniciarNuevaPartida()">INICIAR NUEVA PARTIDA</button>
+            <button onclick="mostrarPuntajes()">VER HISTORIAL</button>
+        </div>
+
+        <div id="menu-puntajes" class="overlay oculto">
+            <h2>HISTORIAL DE COMBATE</h2>
+            <div id="lista-puntajes" class="contenedor-lista">
+                </div>
+            <button onclick="volverAlMenu()">VOLVER AL MENÚ</button>
+        </div>
+
+        <div id="menu-pausa" class="overlay oculto">
+            <h2>SISTEMA EN PAUSA</h2>
+            <p>[ PRESIONA ESC PARA REANUDAR ]</p>
+            <button onclick="togglePausa()">REANUDAR</button>
+            <button onclick="volverAlMenu()">VOLVER AL MENÚ</button>
+        </div>
+
+        <div id="game-over" class="overlay oculto">
+            <h2>CIUDADES ELIMINADAS</h2>
+            <p>PUNTUACIÓN FINAL: <span id="puntuacion-final">0</span></p>
+            <button onclick="volverAlMenu()">VOLVER AL MENÚ PRINCIPAL</button>
+        </div>
+
+        <canvas id="lienzo" width="800" height="600"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
